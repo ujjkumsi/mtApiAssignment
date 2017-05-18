@@ -24,10 +24,10 @@ API Details
 1. api/create_default_data
 	- To initialize default values provided above
 
-2. api/sent_mails(pagenum)
+2. api/sent_mails/<pagenum>
 	- To list sent mails for particular page with pagesize 50
 
-3. api/inbox(pagenum)
+3. api/inbox/<pagenum>
 	- To list inbox for particular page with pagesize 50
 
 4. api/sendmail
@@ -46,6 +46,9 @@ API Details
 	- To add user
 	Json format:
 		{"username":"name", "email":"a@b.c"}
+
+6. api/get_thread/<id>
+    - To get mails in thread with id "id"
 
 
 
