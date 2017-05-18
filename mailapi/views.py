@@ -158,6 +158,19 @@ def sent_mails(request, pagenum):
             return Response("Bad Request")
 
 @api_view(['GET'])
+def get_thread(request, id):
+    """
+    List all snippets, or create a new snippet.
+    """
+    if request.method == 'GET':
+        global sent_emails
+        id = int(id)
+        if(id >= 0 and id < len(emails)):
+            return Response(emails[id])
+        else:
+            return Response("Bad Request")
+
+@api_view(['GET'])
 def create_default_data(request):
     if request.method == 'GET':
         global users,emails,inbox,sent_emails
@@ -173,6 +186,9 @@ def create_default_data(request):
         inbox = [0,4,3]
         sent_emails = [1,2,0,3]
         return Response(str(emails))
+
+
+
 
 
 
